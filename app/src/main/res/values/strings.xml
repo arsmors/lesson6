@@ -2,6 +2,7 @@
     <string name="app_name">Lesson6</string>
     <string name="button_share">Share</string>
     <string name="button_info">Info</string>
+    <string name="button_close">Close</string>
 
     <string-array name="car_types">
         <item>Truck</item>
