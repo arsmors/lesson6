@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.den.lesson6.Interfaces.PhotoItem;
 import com.example.den.lesson6.R;
@@ -27,6 +28,7 @@ public class InfoFragment extends Fragment {
     public PhotoItem photoItem;
 
     @BindView(R.id.imageViewImage) ImageView imageViewImage;
+    @BindView(R.id.textViewAuthor) TextView textViewAuthor;
 
 
     public InfoFragment() {}
@@ -41,6 +43,7 @@ public class InfoFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         Picasso.get().load(photoItem.getImgUrl()).into(imageViewImage);
+        textViewAuthor.setText(photoItem.getAuthorName());
 
         return view;
     }
