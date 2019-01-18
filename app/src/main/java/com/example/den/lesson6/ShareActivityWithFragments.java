@@ -46,6 +46,7 @@ public class ShareActivityWithFragments extends Activity implements ShareFragmen
         FragmentTransaction ft = getFragmentManager().beginTransaction();
 
         InfoFragment fragment = new InfoFragment();
+        fragment.photoItem = this.photoItem;
 
         ft.replace(R.id.frameLayout, fragment);
         ft.commit();
