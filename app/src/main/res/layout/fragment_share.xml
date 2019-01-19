@@ -26,4 +26,14 @@
         android:layout_marginBottom="20dp"
         android:text="@string/button_info"
         android:onClick="onShareButton"/>
+
+    <Button
+        android:id="@+id/buttonCloseFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="20dp"
+        android:text="Close"
+        android:onClick="onCloseButtonFragment"/>
 </RelativeLayout>

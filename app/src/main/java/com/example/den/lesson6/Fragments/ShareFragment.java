@@ -25,6 +25,7 @@ public class ShareFragment extends Fragment {
     public interface ShareFragmentListener {
         void onInfoPress();
         void onSharePress();
+        void onCloseFragmentButtonPress();
     }
 
     public PhotoItem photoItem;
@@ -33,6 +34,7 @@ public class ShareFragment extends Fragment {
     @BindView(R.id.imageViewImage) ImageView imageViewImage;
     @BindView(R.id.buttonShare) Button buttonShare;
     @BindView(R.id.buttonInfo) Button buttonInfo;
+    @BindView(R.id.buttonCloseFragment) Button buttonCloseFragment;
 
 
     public ShareFragment() {
@@ -65,6 +67,10 @@ public class ShareFragment extends Fragment {
 
         buttonInfo.setOnClickListener(button -> {
             listener.onInfoPress();
+        });
+
+        buttonCloseFragment.setOnClickListener(button -> {
+            listener.onCloseFragmentButtonPress();
         });
 
         return view;

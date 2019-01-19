@@ -64,6 +64,14 @@ public class ShareActivityWithFragments extends Activity implements ShareFragmen
     }
 
     @Override
+    public void onCloseFragmentButtonPress() {
+//        showShareFragment();
+        Intent shareIntent = new Intent(this, MainActivity.class);
+        startActivity(shareIntent);
+
+    }
+
+    @Override
     public void onSharePress() {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("text/plain");
