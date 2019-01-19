@@ -24,14 +24,31 @@ import butterknife.ButterKnife;
  */
 public class InfoFragment extends Fragment {
 
+    public interface ShareFragmentListener2 {
+        void onClosePress();
+    }
 
     public PhotoItem photoItem;
+    public ShareFragmentListener2 listener;
 
     @BindView(R.id.imageViewImage) ImageView imageViewImage;
     @BindView(R.id.textViewAuthor) TextView textViewAuthor;
+    @BindView(R.id.buttonClose) Button buttonClose;
 
 
     public InfoFragment() {}
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof ShareFragmentListener2) {
+            listener = (ShareFragmentListener2) context;
+        } else {
+            throw new ClassCastException(context.toString()
+                    + " must implement ShareFragmentListener");
+        }
+    }
+
 
 
     @Override
@@ -44,6 +61,10 @@ public class InfoFragment extends Fragment {
 
         Picasso.get().load(photoItem.getImgUrl()).into(imageViewImage);
         textViewAuthor.setText(photoItem.getAuthorName());
+
+        buttonClose.setOnClickListener(button -> {
+            listener.onClosePress();
+        });
 
         return view;
     }

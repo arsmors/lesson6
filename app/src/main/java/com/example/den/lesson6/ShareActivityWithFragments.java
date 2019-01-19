@@ -11,7 +11,7 @@ import com.example.den.lesson6.Interfaces.PhotoItem;
 
 import static com.example.den.lesson6.ShareActivity.PHOTO_ITEM_KEY;
 
-public class ShareActivityWithFragments extends Activity implements ShareFragment.ShareFragmentListener {
+public class ShareActivityWithFragments extends Activity implements ShareFragment.ShareFragmentListener, InfoFragment.ShareFragmentListener2 {
 
     //TODO 1: Pass PhotoImage object to info InfoFragment
     //TODO 2: Show on InfoFragment UI author name
@@ -56,6 +56,11 @@ public class ShareActivityWithFragments extends Activity implements ShareFragmen
     @Override
     public void onInfoPress() {
         showInfoFragment();
+    }
+
+    @Override
+    public void onClosePress() {
+        showShareFragment();
     }
 
     @Override
